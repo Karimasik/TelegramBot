@@ -1,6 +1,5 @@
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
@@ -16,10 +15,6 @@ public class Film {
         this.url = url;
     }
 
-//    public Film() {
-//        connect();
-//    }
-
     public void connect() { //подключаемся к странице
         try {
             document = Jsoup.connect(url).userAgent("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36 OPR/77.0.4054.80").get();
@@ -29,8 +24,6 @@ public class Film {
     }
 
     public String getTitle() { //получаем название фильма
-//         String title = document.title();
-//         return title;
         Elements title = document.getElementsByClass("styles_title__2l0HH");
         return title.text();
     }

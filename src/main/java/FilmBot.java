@@ -1,22 +1,12 @@
 import org.telegram.telegrambots.api.methods.send.SendMessage;
-import org.telegram.telegrambots.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.Reader;
-import java.lang.reflect.Method;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.sql.*;
 
@@ -101,23 +91,6 @@ public class FilmBot extends TelegramLongPollingBot {
         } else {
             return "Не слышал об этом\uD83D\uDE31 Дай мне название фильма\uD83E\uDD28 или поищи тут https://www.kinopoisk.ru";
         }
-    }
-
-
-    public void connectDatabase() throws ClassNotFoundException, SQLException {
-        //коннектимся c БД
-//        Class.forName("com.mysql.cj.jdbc.Driver");
-//        try (Connection connection = DriverManager.getConnection(connectionUrl, userName, password);
-//            Statement statement = connection.createStatement()) {
-//            ResultSet resultSet = statement.executeQuery("SELECT Title FROM Movie");
-//            while(resultSet.next()) {
-//                title.add(resultSet.getString("Title"));
-//            }
-//        } catch(Exception e) {
-//            System.out.println("Connection failed");
-//            e.printStackTrace();
-//        }
-
     }
 
     public String getInfoFilm() {
